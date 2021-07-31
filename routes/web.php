@@ -1,19 +1,8 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdutoController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
-
-Route::get('/produtos', function(){
-    return view('produtos');
-});
-
-Route::get('/produto/edit/{id}', function(){
-    dd('teste');
-});
-
-Route::post('/produto/store', function(){
-dd('cadastrar');
-
-});
+Route::get('produto/store', 'ProdutoController@store');
